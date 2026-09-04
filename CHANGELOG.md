@@ -2,6 +2,16 @@
 
 This file tracks public Next64 C64 Game Creator releases. Older internal revisions are summarized where appropriate.
 
+## VER 17.0 - Audio and music editor expansion
+
+- Added a SID sound-effect editor with waveform, frequency, ADSR, pulse-width, and duration controls.
+- Added a compact three-voice music pattern editor with note/rest rows, tempo, and looping.
+- Added editor previews for effects and Voice 1 melodies.
+- Added Play Sound, Play Music, and Stop Music Visual Logic actions.
+- Added project save/load support for audio resources.
+- Added generated C64 SID playback through `generated_audio.asm`.
+- Preserved compatibility with earlier `.n64game` projects.
+
 ## VER 16.0 - Next64 Studio editor theme
 
 - Redesigned the complete editor to match the branded startup artwork.

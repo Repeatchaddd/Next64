@@ -1,6 +1,6 @@
 # Next64 C64 Game Creator
 
-Next64 is a visual game creator for the Commodore 64. It combines sprite, tile, scrolling-room, object, path, inventory, save-game, UI/HUD, validation, and visual-logic editors with a Kick Assembler export pipeline.
+Next64 is a visual game creator for the Commodore 64. It combines sprite, tile, scrolling-room, object, path, inventory, save-game, UI/HUD, audio/music, validation, and visual-logic editors with a Kick Assembler export pipeline.
 
 The project is developed by **Next64 Studios** for people who want to create new C64 games without writing an entire engine from scratch.
 
@@ -8,9 +8,9 @@ The project is developed by **Next64 Studios** for people who want to create new
 
 ## Current release
 
-**VER 16.0** adds the complete dark Next64 Studio editor theme, following VER 15.0 scrolling rooms and camera support, VER 14.0 reusable UI/HUD layouts, VER 13.0 save games, and VER 12.0 project validation and Test Play debugging.
+**VER 17.0** adds integrated SID sound-effect design and a three-voice music pattern editor, with editor previews, project persistence, generated C64 playback routines, and Visual Logic control.
 
-[Download the current full build](next64_game_creator_ver_16_0.zip)
+[Download the current full build](next64_game_creator_ver_17_0.zip)
 
 The ZIP contains the editor, branded splash artwork, examples, generated-ASM examples, Windows launcher, README, and the current Quick Start PDF.
 
@@ -63,6 +63,14 @@ The ZIP contains the editor, branded splash artwork, examples, generated-ASM exa
 - Reusable HUD layouts assignable to multiple levels
 - Tile, variable-number, and variable-bar HUD elements
 - Matching editor Test Play and generated-runtime behavior
+
+### Audio and music
+
+- SID sound-effect editor with waveform, frequency, ADSR, pulse width, and duration controls
+- Three-voice note/rest pattern editor with tempo and looping
+- Editor previews for sound effects and Voice 1 melodies
+- Visual Logic actions to play sounds, start music, and stop music
+- Generated `generated_audio.asm` SID playback runtime
 
 ### Validation, testing, and export
 
@@ -121,7 +129,7 @@ py next64_game_creator.py
 4. Create objects that use those sprites.
 5. Create or import tiles in **Tiles**.
 6. Configure and paint rooms, including camera settings, in **Rooms**.
-7. Attach editable behavior in **Visual Logic**.
+7. Create sound effects or music in **Audio / Music**, then attach editable behavior in **Visual Logic**.
 8. Use **Test Play** frequently.
 9. Run **Full Validation** and resolve errors.
 10. Save the `.n64game` project, generate, compile, and test the C64 build.
@@ -135,6 +143,7 @@ py next64_game_creator.py
 - Scrolling rooms currently require 8x8 tiles and are limited to 512x256 pixels.
 - Tile Local color is stored per tile, not separately for every 8x8 character cell within a larger tile.
 - HUDs are tile-based; static text must currently be drawn as tiles.
+- Music currently uses note/rest rows with one shared frames-per-row tempo; filters, slides, vibrato, instrument changes, and SID-song import remain future expansions.
 - Some game genres will still require additional general-purpose editor actions or custom ASM calls.
 - REU-enabled enhancements remain optional and must not be assumed on a standard C64.
 
